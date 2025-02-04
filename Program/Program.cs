@@ -32,9 +32,9 @@
 
     class Osoba
     {
-        protected string imie { get; set; }
-        protected string nazwisko { get; set; }
-        protected string dataUrodzenia { get; set; }
+        protected string imie;
+        protected string nazwisko;
+        protected string dataUrodzenia;
 
         public Osoba(string imie, string nazwisko, string dataUrodzenia)
         {
@@ -51,9 +51,9 @@
 
     class Student : Osoba
     {
-        private int rok { get; set; }
-        private int grupa { get; set; }
-        private int nrIndeksu { get; set; }
+        private int rok;
+        private int grupa;
+        private int nrIndeksu;
 
         public Student(string imie, string nazwisko, string dataUrodzenia, int rok, int grupa, int nrIndeksu)
        : base(imie, nazwisko, dataUrodzenia)
@@ -64,8 +64,7 @@
         }
         public override void WypiszInfo()
         {
-            base.WypiszInfo();
-            Console.WriteLine($"Rok: {rok}, Grupa: {grupa}, Nr indeksu: {nrIndeksu}");
+            Console.WriteLine($"Imię: {imie}, Nazwisko: {nazwisko}, Data urodzenia: {dataUrodzenia}, Rok: {rok}, Grupa: {grupa}, Nr indeksu: {nrIndeksu}\n");
         }
     }
 
@@ -73,7 +72,7 @@
     {
         private string pozycja;
         private string klub;
-        private int liczbaGoli = 0;
+        private int liczbaGoli;
 
         public Pilkarz(string imie, string nazwisko, string dataUrodzenia, string pozycja, string klub)
             : base(imie, nazwisko, dataUrodzenia)
@@ -84,14 +83,12 @@
 
         public override void WypiszInfo()
         {
-            base.WypiszInfo();
-            Console.WriteLine($"Pozycja: {pozycja}, Klub: {klub}, Liczba goli: {liczbaGoli}");
+            Console.WriteLine($"Imię: {imie}, Nazwisko: {nazwisko}, Data urodzenia: {dataUrodzenia}, Pozycja: {pozycja}, Klub: {klub}, Liczba goli: {liczbaGoli}\n");
         }
 
         public void StrzelGola()
         {
             liczbaGoli++;
-            Console.WriteLine($"{imie} {nazwisko} strzelił gola! Łączna liczba goli: {liczbaGoli}");
         }
 
     }
